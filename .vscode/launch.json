@@ -1,0 +1,23 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "qemu",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/HelloWorld.elf",
+            "targetArchitecture": "arm",
+            "miDebuggerServerAddress": "localhost:3333",
+            "miDebuggerPath": "arm-none-eabi-gdb",
+            "debugServerPath": "cmake",
+            "debugServerArgs": "--build ${workspaceFolder}/build --target qemu-gdb",
+            "serverLaunchTimeout": 10000,
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": true,
+            "MIMode": "gdb",
+        }
+    ]
+}
