@@ -64,9 +64,13 @@ compile_commands.json
 CTestTestfile.cmake
 _deps
 
+# Ninja
+*.ninja
+.ninja_deps
+.ninja_log
+
 # VSCode
 .vscode/*
-!.vscode/cmake-kits.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json

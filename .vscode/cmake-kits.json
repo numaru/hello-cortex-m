@@ -1,6 +1,0 @@
-[
-    {
-        "name": "gnu/cm3",
-        "toolchainFile": "toolchain-files/gnu-cm3.cmake"
-    }
-]

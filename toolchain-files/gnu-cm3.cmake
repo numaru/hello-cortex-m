@@ -15,9 +15,9 @@ set(CMAKE_C_FLAGS "-mthumb -mcpu=${mcu_arch} -std=c99 -fno-builtin -fdata-sectio
 set(CMAKE_CXX_FLAGS "-mthumb -mcpu=${mcu_arch} -fno-builtin -fdata-sections -ffunction-sections" CACHE INTERNAL "cxx compiler flags")
 set(CMAKE_ASM_FLAGS "-mthumb -mcpu=${mcu_arch}" CACHE INTERNAL "asm compiler flags")
 
-set(CMAKE_C_FLAGS_DEBUG "-O0 -g -gstabs+" CACHE INTERNAL "c debug compiler flags")
-set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g -gstabs+" CACHE INTERNAL "cxx debug compiler flags")
-set(CMAKE_ASM_FLAGS_DEBUG "-g -gstabs+" CACHE INTERNAL "asm debug compiler flags")
+set(CMAKE_C_FLAGS_DEBUG "-O0 -g -g3 -ggdb" CACHE INTERNAL "c debug compiler flags")
+set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g -g3 -ggdb" CACHE INTERNAL "cxx debug compiler flags")
+set(CMAKE_ASM_FLAGS_DEBUG "-g -g3 -ggdb" CACHE INTERNAL "asm debug compiler flags")
 
 set(CMAKE_C_FLAGS_RELEASE "-Os" CACHE INTERNAL "c release compiler flags")
 set(CMAKE_CXX_FLAGS_RELEASE "-Os" CACHE INTERNAL "cxx release compiler flags")

@@ -4,9 +4,9 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "qemu",
+      "label": "renode",
       "type": "shell",
-      "command": "cmake --build build --target qemu",
+      "command": "cmake --build build --target renode",
       "group": {
         "kind": "build",
         "isDefault": true

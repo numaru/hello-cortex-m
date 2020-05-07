@@ -5,19 +5,52 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "qemu",
+            "name": "Run Renode",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/HelloWorld.elf",
             "targetArchitecture": "arm",
             "miDebuggerServerAddress": "localhost:3333",
-            "miDebuggerPath": "arm-none-eabi-gdb",
+            "miDebuggerPath": "arm-none-eabi-gdb.exe",
             "debugServerPath": "cmake",
-            "debugServerArgs": "--build ${workspaceFolder}/build --target qemu-gdb",
+            "debugServerArgs": "--build ${workspaceFolder}/build --target renode",
+            "serverStarted": "sysbus: Segment loaded",
             "serverLaunchTimeout": 10000,
             "cwd": "${workspaceFolder}",
             "stopAtEntry": true,
             "MIMode": "gdb",
+            "customLaunchSetupCommands": [
+                {
+                    "text": "target extended-remote :3333",
+                    "description": "connect to remote target",
+                    "ignoreFailures": false
+                },
+                {
+                    "text": "cd ${workspaceFolder}",
+                    "description": "change current directory",
+                    "ignoreFailures": false
+                },
+                {
+                    "text": "file build/HelloWorld.elf",
+                    "description": "load symbols",
+                    "ignoreFailures": false
+                },
+                {
+                    "text": "load",
+                    "description": "load the file in renode",
+                    "ignoreFailures": false
+                },
+                {
+                    "text": "b Reset_Handler",
+                    "description": "halt on reset handler",
+                    "ignoreFailures": false
+                },
+                {
+                    "text": "monitor start",
+                    "description": "start renode",
+                    "ignoreFailures": false
+                },
+            ],
         }
     ]
 }
